@@ -1,6 +1,9 @@
 
 const express = require("express")
+var cors = require('cors')
 const app = express()
+
+app.use(cors())
 
 const knex = require('./connectWithDB');
 
@@ -23,7 +26,6 @@ app.post("/add",(req,res,next)=>{
 })
 
 app.get('/get',(req,res,next)=>{
-    console.log("Sonam")
     knex.select("*").from('users').then((users)=>{
        return res.send(users)
     })
@@ -31,7 +33,6 @@ app.get('/get',(req,res,next)=>{
 
 
 app.delete('/delete/:userId',(req,res,next)=>{
-    console.log("sonam")
     var userId = (req.params.userId)
     console.log(userId);
     knex.select("*").from('users').where('id',userId).delete().then(()=>{
@@ -49,4 +50,4 @@ app.delete('/deleteAll',(req,res,next)=>{
 })
 
 
-app.listen(3000, () => console.log('server is listening'));
+app.listen(9000, () => console.log('server is listening'));

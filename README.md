@@ -11,11 +11,12 @@
   Follow this tutorial and setup your mysql db in your system `https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04`
 2. Open mysql server `mysql -u root -p`
 3. Create database `create database random_users`
+4. Using this script create a schema `node connectWithDB js`
+
 
 
 ## Project Start
 
-Run `node connectWithDB.js`
 Run `npm start`
 
 # Happy Programming
